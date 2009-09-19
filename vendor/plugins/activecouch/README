@@ -1,0 +1,28 @@
+ActiveCouch wants to be a simple, convenient, idiomatic Object Relational Mapper for the hot new kid on the block - CouchDB. CouchDB (simplistically speaking) is a document store, which essentially means that objects can be stored in a schema-less environment.
+
+What it is?
+-----------
+With ActiveCouch, you can easily save, query, delete documents to/from a CouchDB database in your favourite language - Ruby. ActiveCouch derives a lot of its principles (and some code) from both ActiveRecord and ActiveResource, two libraries made popular by the other hot pubescent on the block - Ruby on Rails (http://www.rubyonrails.org).
+
+Why?
+----
+As they say, necessity is the mother of invention. And as they also say, death before inconvenience. Our company, Wego (http://www.wego.com) has been using CouchDB for the past six months now, as we have a need for a document-model to store vast amounts of information, and we needed a convenience mapper in our favourite language, in order to use CouchDB elegantly. Since, the Rubyists here at Wego are already very familiar with ActiveRecord semantics, care has been taken to ensure that ActiveCouch resembled it in many ways.
+
+Contributors
+------------
+
+- Cheah Chu Yeow (http://www.github.com/chuyeow)
+- Carlos Villela (http://www.github.com/cv)
+
+Requirements
+------------
+ - Ruby 1.8.5 or above (http://www.ruby-lang.org)
+ - rubygems 0.9.4 (http://rubygems.org)
+ - JSON gem (http://json.rubyforge.org) [Used for JSON encoding/decoding]
+ - RSpec gem (http://rspec.rubyforge.org) [Used to run specs]
+ - CouchDB 0.8.0 and upwards ( http://incubator.apache.org/couchdb/community/code.html ) [Some specs require running CouchDB at localhost:5984]
+ 
+Important Notice
+----------------
+
+ActiveCouch v0.2.0 does not support pre-0.8.0 versions of CouchDB
