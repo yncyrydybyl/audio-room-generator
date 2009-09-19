@@ -6,4 +6,14 @@ class Room < ActiveCouch::Base
   has :sounds
   has :geometry
   has :exits
+  has :user_name
+  
+  def to_json
+    {
+      "Conference" => "#{self._id}@#{JABBER_SERVER}",
+      "Name" => self.name,
+      "Description" => self.description,
+      "Sounds" => self.sounds
+    }.to_json
+  end
 end
