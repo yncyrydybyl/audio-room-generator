@@ -4,7 +4,7 @@ class RoomController < ApplicationController
   end
 
   def show
-    @room = Room.find(:all, :params => { :user_name => "me", :name => params[:id]}).first
+    @room = Room.find(params[:id])
   end
 
   def update

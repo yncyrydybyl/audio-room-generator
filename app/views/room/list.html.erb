@@ -1,6 +1,6 @@
 <h1> room list </h1>
 <ul>
 <% @rooms.each do |room| %>
-  <li><%= link_to room.name, { :action => :show, :id => room.name } %></li>
+  <li><%= link_to room.name, { :action => :show, :id => room._id } %></li>
 <% end %>
 </ul>
