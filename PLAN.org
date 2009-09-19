@@ -1,1 +1,21 @@
+* urls
+
 creating output which is similar to http://justdigits.de/vare/Erdgeschoss.vare
+
+* url scheme
+** rooms
+
+/room/:user/:room_name.json
+/user/yncyrydybyl/room/casino.json
+
+** sound files
+
+/sound/:user/:name.:ext
+/sound/yncyrydybyl/:room_name/enter.wav
+
+choose sound file
+- none
+- system default
+- user default
+- upload for room event
+- define url
