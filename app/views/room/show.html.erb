@@ -1,0 +1,6 @@
+<h1>Room <%= @room.name %></h1>
+<% form_for :room, @room do |form| %>
+<%= render :partial => "form", :locals => { :form => form } %>
+<%= submit_tag "update" %>
+
+<% end %>

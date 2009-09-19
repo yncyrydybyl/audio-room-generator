@@ -1,0 +1,7 @@
+form label {
+  display:block;
+}
+form label span {
+  font-style:italic;
+  width:15em;
+}
