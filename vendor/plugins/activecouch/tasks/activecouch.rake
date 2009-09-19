@@ -41,7 +41,7 @@ namespace :activecouch do
       site = YAML::load(File.open(File.join(Rails.root, 'config', 'activecouch.yml')))[Rails.env]['site']
       
       unless(view = Object.const_get(view_name)).nil?
-        databases = ENV['db'] == '_all_dbs' ? ActiveCouch::Exporter.all_databases(site) : ENV['db']
+        databases = ENV['db'] == '_all_dbs' ? ActiveCouch::Exporter.all_databases(site) : [ENV['db']]
         databases.each do |db|
           saved = ActiveCouch::Exporter.export(site, view, :database => db)
           if saved
@@ -63,7 +63,7 @@ namespace :activecouch do
       
       
       unless(view = Object.const_get(view_name)).nil?
-        databases = ENV['db'] == '_all_dbs' ? ActiveCouch::Exporter.all_databases(site) : ENV['db']
+        databases = ENV['db'] == '_all_dbs' ? ActiveCouch::Exporter.all_databases(site) : [ENV['db']]
         databases.each do |db|
           deleted = ActiveCouch::Exporter.delete(site, view, :database => db)
           if deleted
