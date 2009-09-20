@@ -25,4 +25,7 @@ class Room < ActiveCouch::Base
       "Events"      => self.exits
     }.to_json
   end
+	def get_exits
+		exithash = JSON.parse self.exits	
+	end
 end

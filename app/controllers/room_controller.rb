@@ -8,5 +8,9 @@ class RoomController < ApplicationController
   end
 
   def update
+		@room = Room.find(params[:_id])
+		@room.name = params[:name]
+		@room.description = params[:description]
+						@room.save
   end
 end
