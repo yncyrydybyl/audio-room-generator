@@ -12,17 +12,20 @@ class Room < ActiveCouch::Base
 	before_save :create_exits
 
 	def create_exits
-		e = JSON.parse self.exits
-		e.each { |ex|
-			debugger 
-			if (ex["orientation"] == "east")
-				ev = { 	"Pos" => [-3,0], 
-								"Description" => "Ausgang", 
-								"Type" => "Link", 
-								"Ref" => "#{ex.ref}#W" }
-				self.events << ev
-			end
-		}  
+		unless self.exits.empty?
+		debugger
+						e = JSON.parse self.exits
+						e.each { |ex|
+							debugger 
+							if (ex["orientation"] == "east")
+								ev = { 	"Pos" => [-3,0], 
+												"Description" => "Ausgang", 
+												"Type" => "Link", 
+												"Ref" => "#{ex.ref}#W" }
+								self.events << ev
+							end
+						}
+		end  
 	end
 	  
   # def initialize
