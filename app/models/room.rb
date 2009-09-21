@@ -5,9 +5,26 @@ class Room < ActiveCouch::Base
   has :description
   has :sounds
   has :geometry
-  has :exits
+	has :exits
+	has :events
+  #attr_accessor :exits
   has :user_name
-  
+	before_save :create_exits
+
+	def create_exits
+		e = JSON.parse self.exits
+		e.each { |ex|
+			debugger 
+			if (ex["orientation"] == "east")
+				ev = { 	"Pos" => [-3,0], 
+								"Description" => "Ausgang", 
+								"Type" => "Link", 
+								"Ref" => "#{ex.ref}#W" }
+				self.events << ev
+			end
+		}  
+	end
+	  
   # def initialize
   #   super
   #   self.user_name = "me"

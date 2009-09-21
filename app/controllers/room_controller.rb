@@ -11,6 +11,6 @@ class RoomController < ApplicationController
 		@room = Room.find(params[:_id])
 		@room.name = params[:name]
 		@room.description = params[:description]
-						@room.save
+		@room.save
   end
 end
