@@ -1,0 +1,5 @@
+== frontend to generate audio room configurations
+
+To create a audio room you need to configure sounds, exits and other parameters.
+
+The data is stored on a couch-db server.
