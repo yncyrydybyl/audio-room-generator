@@ -1,0 +1,7 @@
+{
+  "env": {
+      "default": {
+          "db": "http://anselm:test@localhost:5984/arg"
+      }
+  }
+}
